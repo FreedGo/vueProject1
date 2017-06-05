@@ -33,6 +33,7 @@ Vue.use(vueRouter);
 // Vue.use(vueResoure);
 
 let router = new vueRouter({
+
     routes:[
         { name:'root',path:'/',redirect:'home'},//打开时自动重定向至首页
         { name:'home',path:'/home',component:home},
