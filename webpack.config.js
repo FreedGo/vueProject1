@@ -53,6 +53,11 @@ module.exports = {
 	      title: 'hello',  //生成的页面标题
 	      filename: 'index.html', //生成的文件名称
      	  template: 'index1.html' //根据index1.html这个模板来生成(这个文件请你自己生成)
-	    })
+	    }),
+		 new webpack.optimize.UglifyJsPlugin({//据说是压缩js的
+			 compress: {
+				 warnings: false
+			 }
+		 })
 	  ]
 }
