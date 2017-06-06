@@ -30,7 +30,7 @@ Vue.use(mintUI);
 
 Vue.use(vueRouter);
 
-// Vue.use(vueResoure);
+Vue.use(vueResoure);
 
 let router = new vueRouter({
 

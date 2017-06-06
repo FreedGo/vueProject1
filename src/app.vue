@@ -37,6 +37,9 @@
             return {
                 dec:'vue项目一'
             }
+        },
+        component:{
+
         }
     }
 </script>
