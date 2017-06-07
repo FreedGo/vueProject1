@@ -1,17 +1,13 @@
 <template>
     <div class="tmpl">
         <div class="swipe-warp">
-            <mt-swipe :auto="4000">
-                <mt-swipe-item v-for="item in list">
-                    <!--{{item}}-->
-                    <a class="swipe-link" :href="item.url"><img class="swipe-image" :src="item.img" alt=""></a>
-                </mt-swipe-item>
-            </mt-swipe>
+            <swiper :lists="list"></swiper>
         </div>
     </div>
 </template>
 
 <script>
+    import swiper from '../swipe/swiper.vue';
     export default{
         data(){
             return{
@@ -24,7 +20,7 @@
         },
         methods:{
         	getHomeLunbo(){
-        		var url = 'http://localhost:8899/api/getlunbo';
+        		var url = 'http://webhm.top:8899/api/getlunbo';
         		this.$http.get(url).then(res=>{
         			this.list = res.body.message;
                 },res=>{
@@ -33,21 +29,25 @@
 
                 );
             }
+        },
+        components:{
+        	swiper
         }
+
     }
 </script>
 
 <style>
-    .mint-swipe{
-        height:300px;
-    }
-.swipe-link{
-    display: inline-block;
-    width:100%;
-    height: auto;
-}
-.swipe-image{
-    width: 100%;
-    height: auto;
-}
+    /*.mint-swipe{*/
+        /*height:220px;*/
+    /*}*/
+/*.swipe-link{*/
+    /*display: inline-block;*/
+    /*width:100%;*/
+    /*height: auto;*/
+/*}*/
+/*.swipe-image{*/
+    /*width: 100%;*/
+    /*height: auto;*/
+/*}*/
 </style>
